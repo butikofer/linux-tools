@@ -650,7 +650,7 @@
 #   screen 1
 
 # Rage Kirby
-#backtick 101 0 0 /home/achmed/bin/fgsfds 5
+#backtick 101 1 1 /root/linux-tools/ragekirby.py 5
 #
 #hardstatus on
 #hardstatus alwayslastline
