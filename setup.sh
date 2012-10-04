@@ -1,5 +1,8 @@
 #!/bin/bash
 
+rm ~/.vimrc
+rm ~/.screenrc 
+
 # Create the proper symlinks
-ln -s vimrc ~/.vimrc
-ln -s screenrc ~/.screenrc
+ln -s `pwd`/vimrc ~/.vimrc
+ln -s `pwd`/screenrc ~/.screenrc
