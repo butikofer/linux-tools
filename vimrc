@@ -73,6 +73,22 @@ nmap <leader>v :setlocal paste! paste?<cr>
 " Show matching parens
 set showmatch
 
+" Turn on the ruler status below (similar to Ctrl-G)
+set ruler
+
+" Use SPACE bar to move down
+nnoremap <SPACE> <PAGEDOWN>
+
+" Turn on persistent undo (use with temporal undo - :earlier and :later)
+if has('persistent_undo')
+  set undofile
+  set undodir=$HOME/.VIM_UNDO_FILES
+  set undolevels=1500
+endif
+
+" Improve visual block mode
+set virtualedit=block
+
 " Removes trailing spaces from lines!
 map <silent> <F3> ma:let @1=@/<CR>:%s/\s*$//<CR>:let @/=@1<CR>'a:echo "Removed trailing spaces!"<CR>
 
