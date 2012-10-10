@@ -1,0 +1,10 @@
+[user]
+  name = Josh Butikofer
+  email = butikofe@adobe.com
+[alias]
+  serve = !git daemon --reuseaddr --verbose --base-path=. --export-all --enable=receive-pack ./.git
+  tip = !git log -1
+[color]
+  ui = true
+[push]
+  default = current
