@@ -8,3 +8,5 @@ rm ~/.gitconfig
 ln -s `pwd`/vimrc ~/.vimrc
 ln -s `pwd`/screenrc ~/.screenrc
 ln -s `pwd`/gitconfig ~/.gitconfig
+
+cp -a bin/* ~/bin/
