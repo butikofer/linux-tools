@@ -123,7 +123,7 @@ autocmd BufNew,BufRead *.c set cindent |
 autocmd BufNew,BufRead *.cpp set noexpandtab | set ts=4
 
 " PHP FILES
-autocmd BufNew,BufRead *.php set noexpandtab | set ts=2 | set sw=2 | set showmatch | setlocal formatoptions+=c formatoptions+=r formatoptions+=o
+autocmd BufNew,BufRead *.php set noexpandtab | set ts=2 | set sw=2 | set showmatch | setlocal formatoptions+=c formatoptions+=r formatoptions+=o | setlocal comments=sr:/*,mb:*,elx:*/,s://,m://
 
 " HTML FILES
 " Turn off C-style indentation and enable word wrapping.
