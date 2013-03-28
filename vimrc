@@ -15,7 +15,7 @@ set incsearch		" Incremental search
 set hlsearch    " Highlight matching search text
 set autowrite		" Automatically save before commands like :next and :make
 "set hidden     " Hide buffers when they are abandoned
-"set mouse=a		" Enable mouse usage (all modes) in terminals
+set mouse=a		" Enable mouse usage (all modes) in terminals
 
 set wildmenu    " Cool way to display files when using :e
 set wildignore+=*.pyc,*.zip,*.gz,*.bz,*.tar,*.jpg,*.png,*.gif,*.avi,*.wmv,*.ogg,*.mp3,*.mov
@@ -189,4 +189,9 @@ map <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 " files)
 map <silent> ,f ma:let @1=@/<CR>:?^[a-z]<CR>"xy$:let @/=@1<CR>'a:echo "In Function:" @x<CR> |
 
+" Has the status line ALWAYS be shown
 set laststatus=2
+
+" Configure the 'supertab' plugin to use Ctrl-Space
+let g:SuperTabMappingForward = '<c-space>'
+let g:SuperTabMappingBackward = '<s-c-space>'
