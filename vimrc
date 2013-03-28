@@ -195,3 +195,5 @@ set laststatus=2
 " Configure the 'supertab' plugin to use Ctrl-Space
 let g:SuperTabMappingForward = '<c-space>'
 let g:SuperTabMappingBackward = '<s-c-space>'
+
+set runtimepath^=~/.vim/supertab,~/.vim/ctrlp.vim
