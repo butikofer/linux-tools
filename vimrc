@@ -8,7 +8,7 @@
 "set showmatch	" Show matching brackets.
 set nocompatible " Make VIM act like VIM!
 set nomodeline   " Turn off modelines
-let mapleader = "," " Set leader to something different
+let mapleader = "T" " Set leader to something different
 set ignorecase	" Do case insensitive matching
 set smartcase		" Do smart case matching
 set incsearch		" Incremental search
@@ -192,11 +192,19 @@ map <silent> ,f ma:let @1=@/<CR>:?^[a-z]<CR>"xy$:let @/=@1<CR>'a:echo "In Functi
 " Has the status line ALWAYS be shown
 set laststatus=2
 
-set runtimepath^=~/.vim/supertab,~/.vim/ctrlp.vim
-
 " Configure the 'supertab' plugin to use Ctrl-Space
 "let g:SuperTabMappingForward = '<c-space>'
 "let g:SuperTabMappingBackward = '<s-c-space>'
 let g:SuperTabDefaultCompletionType = "context"
 
+" Manage plugins
+execute pathogen#infect()
 
+" Tagbar Config
+let g:tagbar_usearrows = 1
+nnoremap <leader>l :TagbarToggle<CR>
+
+" Solarized
+"set background=light
+"let g:solarized_termcolors=256
+"colorscheme solarized
