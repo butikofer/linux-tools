@@ -176,8 +176,8 @@ endfunction
 
 inoremap jj <ESC>
 
-inoremap <silent> <TAB>   <c-r>=InsertTabWrapper ("backward")<cr>
-inoremap <silent> <s-tab> <c-r>=InsertTabWrapper ("forward")<cr>
+"inoremap <silent> <TAB>   <c-r>=InsertTabWrapper ("backward")<cr>
+"inoremap <silent> <s-tab> <c-r>=InsertTabWrapper ("forward")<cr>
 
 abbrev cmmt /**<CR><CR>/<CR><UP><UP><ESC>A
 abbrev yahoo #ifdef MYAHOO<CR>#endif /* MYAHOO */<UP><CR>
@@ -192,8 +192,11 @@ map <silent> ,f ma:let @1=@/<CR>:?^[a-z]<CR>"xy$:let @/=@1<CR>'a:echo "In Functi
 " Has the status line ALWAYS be shown
 set laststatus=2
 
-" Configure the 'supertab' plugin to use Ctrl-Space
-let g:SuperTabMappingForward = '<c-space>'
-let g:SuperTabMappingBackward = '<s-c-space>'
-
 set runtimepath^=~/.vim/supertab,~/.vim/ctrlp.vim
+
+" Configure the 'supertab' plugin to use Ctrl-Space
+"let g:SuperTabMappingForward = '<c-space>'
+"let g:SuperTabMappingBackward = '<s-c-space>'
+let g:SuperTabDefaultCompletionType = "context"
+
+
