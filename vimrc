@@ -2,20 +2,17 @@
 " Global settings
 " ###############
 
-" The following are commented out as they cause vim to behave a lot
-" differently from regular Vi. They are highly recommended though.
 "set showcmd		" Show (partial) command in status line.
-"set showmatch	" Show matching brackets.
 set nocompatible " Make VIM act like VIM!
-set nomodeline   " Turn off modelines
+set modeline   " Turn ON modelines
 let mapleader = "T" " Set leader to something different
 set ignorecase	" Do case insensitive matching
-set smartcase		" Do smart case matching
-set incsearch		" Incremental search
+set smartcase   " Do smart case matching
+set incsearch   " Incremental search
 set hlsearch    " Highlight matching search text
-set autowrite		" Automatically save before commands like :next and :make
+set autowrite   " Automatically save before commands like :next and :make
 "set hidden     " Hide buffers when they are abandoned
-set mouse=a		" Enable mouse usage (all modes) in terminals
+set mouse=a     " Enable mouse usage (all modes) in terminals
 
 set wildmenu    " Cool way to display files when using :e
 set wildignore+=*.pyc,*.zip,*.gz,*.bz,*.tar,*.jpg,*.png,*.gif,*.avi,*.wmv,*.ogg,*.mp3,*.mov
@@ -59,10 +56,10 @@ endif " has ("autocmd")
 
 " Allows one to use the tab key, but it is translated as two spaces.
 set ts=2
-set expandtab
+" set expandtab  <-- Turn on expandtab on a per-file type basis
 
 " Sets how many spaces an "shift-indent" command should indent.
-set sw=2
+" set sw=2
 
 " Setup programming indentation by default.
 set cindent
@@ -104,14 +101,16 @@ autocmd BufReadPost *
 " Turn off all autocommenting features
 set formatoptions=
 
+
 " #################
 " Specific Settings
 " #################
 
 " MOAB-STYLE C-CODE
 " Setup indentation for Moab style formatting.
-" Also enables a cool feature that tells you what function you are in if you hit F2!!!
+" Also enables a cool feature that tells you what function you are in if you hit F2!
 autocmd BufNew,BufRead *.c set cindent |
+			 \ set expandtab
                          \ set cino=f1s{1s |
                          \ map <silent> <F2> ma:let @1=@/<CR>:?^[a-z]<CR>"xy$:let @/=@1<CR>'a:echo "In Function:" @x<CR> |
                          \ set showmatch
@@ -180,7 +179,6 @@ inoremap jj <ESC>
 "inoremap <silent> <s-tab> <c-r>=InsertTabWrapper ("forward")<cr>
 
 abbrev cmmt /**<CR><CR>/<CR><UP><UP><ESC>A
-abbrev yahoo #ifdef MYAHOO<CR>#endif /* MYAHOO */<UP><CR>
 
 " Keeps cursor on one line
 map <Leader>zz :let &scrolloff=999-&scrolloff<CR>
